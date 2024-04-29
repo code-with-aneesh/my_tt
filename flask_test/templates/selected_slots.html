@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selected Slots</title>
+</head>
+<body>
+    <h1>Selected Slots for {{ username }}</h1>
+    <ul>
+        {% for slot in selected_slots %}
+        <li>{{ slot[0] }} - {{ slot[1] }} - {{ slot[2] }} - {{ slot[3] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

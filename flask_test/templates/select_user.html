@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select User</title>
+</head>
+
+<body>
+  <h2>Select User</h2>
+  <form action="/select_user" method="post">
+    {% for user in user_names %}
+    <input type="checkbox" id="{{ user }}" name="selected_users" value="{{ user }}" />
+    <label for="{{ user }}">{{ user }}</label><br />
+    {% endfor %}
+    <input type="submit" value="Submit" />
+  </form>
+
+  <a href="{{ url_for('home') }}"><button>Go back to Home</button></a>
+  <a href="{{ url_for('register') }}"><button>Go to register</button></a>
+  <a href="{{ url_for('select_user') }}"><button>Go to Select User</button></a>
+  <a href="{{ url_for('login') }}"><button>Go to login</button></a>
+</body>
+
+</html>

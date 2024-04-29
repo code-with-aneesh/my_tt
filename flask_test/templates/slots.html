@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Slots</title>
+</head>
+<body>
+    <h1>Faculty Slots</h1>
+    <form action="/submit" method="post">
+        {% for slot in slots %}
+        <label>
+            <input type="checkbox" name="slot" value="{{ slot[0] }}"> {{ slot[1] }} - {{ slot[2] }} - {{ slot[3] }} - {{ slot[4] }}
+        </label><br>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
