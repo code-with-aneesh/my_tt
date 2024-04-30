@@ -1,25 +1,115 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+    <style>
+        /* Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Form Container Styles */
+        .form-container {
+            width: 320px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Link Styles */
+        .links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .links a {
+            display: inline-block;
+            margin: 0 8px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
-  <form action="#" method="post">
-    <label for="username">UserName:</label>
-    <input type="text" id="username" name="username" required /><br /><br />
+    <div class="form-container">
+        <h2 style="text-align: center; margin-bottom: 20px;">Login</h2>
+        <form action="#" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
 
-    <label for="password">password:</label>
-    <input type="password" id="password" name="password" required /><br /><br />
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
 
-    <input type="submit" value="Submit" />
-  </form>
-  <a href="{{ url_for('home') }}"><button>Go back to Home</button></a>
-  <a href="{{ url_for('register') }}"><button>Go to register</button></a>
-  <a href="{{ url_for('select_user') }}"><button>Go to Select User</button></a>
-  <a href="{{ url_for('login') }}"><button>Go to login</button></a>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    <div class="links">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('register') }}">Register</a>
+        <a href="{{ url_for('select_slot') }}">Select slot</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('show_slots') }}">Show Slots</a>
+        <a href="{{ url_for('logout') }}">Log Out</a>
+    </div>
 </body>
 
 </html>

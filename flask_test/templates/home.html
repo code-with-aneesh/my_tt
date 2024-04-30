@@ -5,13 +5,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Media query for responsiveness */
+    @media (max-width: 600px) {
+      button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <a href="{{ url_for('home') }}"><button>Go back to Home</button></a>
-  <a href="{{ url_for('register') }}"><button>Go to register</button></a>
-  <a href="{{ url_for('select_user') }}"><button>Go to Select User</button></a>
-  <a href="{{ url_for('login') }}"><button>Go to login</button></a>
+  <a href="{{ url_for('home') }}"><button>Home</button></a>
+  <a href="{{ url_for('register') }}"><button>Register</button></a>
+  <a href="{{ url_for('select_slot') }}"><button>Select slot</button></a>
+  <a href="{{ url_for('login') }}"><button>Login</button></a>
+  <a href="{{ url_for('show_slots') }}"><button>Show Slots</button></a>
+  <a href="{{ url_for('logout') }}"><button>Log Out</button></a>
 </body>
 
 </html>
